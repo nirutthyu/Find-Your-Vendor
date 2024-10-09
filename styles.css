@@ -1,0 +1,493 @@
+/* Reset and general styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    font-family: 'Arial', sans-serif;
+    
+    overflow-y:scroll;
+    margin-bottom:75px;
+}
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #56738d; /* Blue-gray background color */
+    color: #fff;
+}
+.title {
+    margin-right: auto;
+    margin-left: 20px;
+}
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+/* Search bar styles */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    width: 100%;
+    background-color: #879eb5; /* Blue-gray background color */
+    border-radius: 50px;
+    padding: 5px 15px;
+    margin-top:0;
+}
+.search input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    margin-left: 10px;
+    font-size: 16px;
+    color: black; /* Adjust text color */
+}
+.search i {
+    color: #333;
+}
+/* Food buttons section */
+.food-buttons {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   /* Light blue background color */
+}
+.foodBtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+}
+.foodImg {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.foodBtn p {
+    margin-top: 5px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+/* Offers section */
+.offers {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+   
+}
+.offer {
+    width: 45%;
+    background-color: #879eb5; /* Blue-gray background color */
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.offer p {
+    margin: 0;
+    color: #333;
+}
+/* Vendor buttons section */
+.vendor-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Light blue background color */
+}
+.restImg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.vendor-buttons .foodBtn {
+    margin: 10px;
+    text-align: center;
+}
+.vendor-buttons .foodBtn p {
+    text-align: center;
+}
+/* Footer section */
+footer {
+    position:fixed;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    padding: 20px;
+    background-color: #56738d;
+    color: #fff;
+    left:0;
+    text-align: center;
+}
+.footer-links a {
+    color: #fff;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.social-media-icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.social-media-icons i {
+    font-size: 24px;
+}
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    .food-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .foodBtn {
+        width: 45%;
+        margin: 10px 0;
+    }
+    .offers {
+        flex-direction: column;
+    }
+    .offer {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .vendor-buttons {
+        flex-wrap: wrap;
+    }
+    .restImg {
+        width: 100%;
+        height: auto;
+    }
+    .menuimg img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Add border radius for images */
+    }
+}
+/* Vendor card styles */
+.vendor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.vendor-card {
+    width: 300px;
+    margin: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #b0c3d3;
+}
+.vendor-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+
+}
+.vendor-details {
+    padding: 20px;
+}
+.vendor-details h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+.vendor-details p {
+    margin-bottom: 5px;
+    color: #666;
+}
+.vendor-details .btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #3f5263;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.vendor-details .btn:hover {
+    background-color: #56738d;;
+}
+/* Additional styles for menu items */
+.menu {
+    box-sizing: border-box;
+    padding: 9px;
+    width: 350px;
+    height: 120px;
+    margin: auto;
+    margin-top: 5px;
+    display: inline-flex;
+    background-color: #8aa5bc; /* Light blue background color */
+    border-radius: 15px;
+}
+.menuimg {
+    height: 95px;
+    width: 100px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.menudetails {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 15px;
+    text-align: left;
+}
+.menubutton {
+    position: absolute;
+    margin-top: 90px;
+    margin-left: 25px;
+    height: 20px;
+    width: 50px;
+    opacity: 2;
+    border:transparent;
+    border-radius:5px;
+    background-color: #91b9dc;
+}
+.menubutton:hover {
+    opacity: 5;
+    background-color: #79beb3; /* Light green background color */
+    border: transparent;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+.about {
+    padding: 40px;
+    text-align: center;
+    background-color: #8aa5bc; /* Light gray background color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(350px); /* Start offscreen */
+}
+.about.active {
+    opacity: 1; /* Fade in on scroll */
+    transform: translateY(0); /* Slide up on scroll */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.about .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.about-image {
+    max-width: 300px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.about-text {
+    max-width: 600px;
+    text-align: left;
+    margin: 0 auto;
+}
+/* Contact section */
+.contact {
+    padding: 40px;
+    text-align: center;
+ /* Light blue background color */
+}
+.contact form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact form button {
+    padding: 10px 20px;
+    background-color: #56738d; /* Red background color */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.contact form button:hover {
+    background-color: #42749f; /* Darker red background color on hover */
+}
+/* Hero section styles */
+.hero-section {
+    background-image: url('https://wallup.net/wp-content/uploads/2019/05/10/27118-nature-landscapes-fields-crops-farm-hay-bales-wheat-rustic-trees-forest-sky-clouds-sunset-sunrise-color.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Full viewport height */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    padding:20px; /* Add padding for better spacing */
+}
+.hero-section h1 {
+    margin-top:10vw;
+    font-family: 'Playwrite CU', cursive;
+    margin-bottom: 1rem;
+    font-size: 3rem; /* Larger font size for heading */
+    opacity:1;
+}
+.hero-section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem; /* Adjust font size for paragraph */
+    opacity:1;
+}
+.hero-section .cta-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem; /* Add margin to separate button */
+    opacity:1;
+}
+.hero-section .cta-button:hover {
+    background-color: #0056b3;
+    opacity:1;
+}
+body.vendor {
+    font-family: 'Playfair Display', serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.items-container {
+    flex: 2;
+    padding-right: 20px;
+}
+.bill {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.bill h3 {
+    margin-top: 0;
+}
+.bill ul {
+    list-style: none;
+    padding: 0;
+}
+.bill ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+.bill .remove-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.bill .remove-button:hover {
+    background-color: #c82333;
+}
+.offer-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.offer-content {
+    text-align: center;
+}
+#countdown {
+    font-weight: bold;
+    color: #ff0000;
+}
+/* Animation for the "25% off" text */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* Animation for the "HURRY UP!" text */
+@keyframes bounceIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Apply the animations to the elements */
+.offer-section h4 {
+    animation: slideIn 1s ease-out;
+}
+.offer-section h2 {
+    animation: bounceIn 1s ease-out;
+}
