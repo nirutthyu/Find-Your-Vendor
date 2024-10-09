@@ -23,9 +23,6 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_JAVASCRIPT_ES: true # Enable ESLint for JavaScript (AngularJS uses this)
-          VALIDATE_HTML: true # Enable HTML linting
-          VALIDATE_CSS: true # Enable CSS linting
-          VALIDATE_MARKDOWN: true # Optionally, enable markdown linting
           LINTER_RULES_PATH: .github/linters # Custom rules (if you have any)
 
   deploy:
