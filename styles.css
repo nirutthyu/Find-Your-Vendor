@@ -1,4 +1,4 @@
-
+/* Reset and general styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +10,13 @@
     overflow-y:scroll;
     margin-bottom:75px;
 }
-
+/* Header styles */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #56738d;
+    background-color: #56738d; /* Blue-gray background color */
     color: #fff;
 }
 .title {
@@ -40,14 +40,14 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
 }
-
+/* Search bar styles */
 .search {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px auto;
     width: 100%;
-    background-color: #879eb5; 
+    background-color: #879eb5; /* Blue-gray background color */
     border-radius: 50px;
     padding: 5px 15px;
     margin-top:0;
@@ -59,17 +59,18 @@ nav ul li a {
     height: 100%;
     margin-left: 10px;
     font-size: 16px;
-    color: black;
+    color: black; /* Adjust text color */
 }
 .search i {
     color: #333;
 }
-
+/* Food buttons section */
 .food-buttons {
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+   /* Light blue background color */
 }
 .foodBtn {
     border: none;
@@ -90,7 +91,7 @@ nav ul li a {
     color: #333;
     font-weight: bold;
 }
-
+/* Offers section */
 .offers {
     margin-top: 20px;
     display: flex;
@@ -100,7 +101,7 @@ nav ul li a {
 }
 .offer {
     width: 45%;
-    background-color: #879eb5; 
+    background-color: #879eb5; /* Blue-gray background color */
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -110,13 +111,13 @@ nav ul li a {
     margin: 0;
     color: #333;
 }
-
+/* Vendor buttons section */
 .vendor-buttons {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
+    /* Light blue background color */
 }
 .restImg {
     width: 100%;
@@ -132,7 +133,7 @@ nav ul li a {
 .vendor-buttons .foodBtn p {
     text-align: center;
 }
-
+/* Footer section */
 footer {
     position:fixed;
     bottom: 0;
@@ -168,7 +169,7 @@ footer p {
     font-size: 14px;
 
 }
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -204,10 +205,10 @@ footer p {
     .menuimg img {
         max-width: 100%;
         height: auto;
-        border-radius: 10px;
+        border-radius: 10px; /* Add border radius for images */
     }
 }
-
+/* Vendor card styles */
 .vendor-list {
     display: flex;
     flex-wrap: wrap;
@@ -253,7 +254,7 @@ footer p {
 .vendor-details .btn:hover {
     background-color: #56738d;;
 }
-
+/* Additional styles for menu items */
 .menu {
     box-sizing: border-box;
     padding: 9px;
@@ -262,7 +263,7 @@ footer p {
     margin: auto;
     margin-top: 5px;
     display: inline-flex;
-    background-color: #8aa5bc;
+    background-color: #8aa5bc; /* Light blue background color */
     border-radius: 15px;
 }
 .menuimg {
@@ -290,7 +291,7 @@ footer p {
 }
 .menubutton:hover {
     opacity: 5;
-    background-color: #79beb3; 
+    background-color: #79beb3; /* Light green background color */
     border: transparent;
     border-radius: 5px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
@@ -298,14 +299,14 @@ footer p {
 .about {
     padding: 40px;
     text-align: center;
-    background-color: #8aa5bc; 
-    transition: background-color 0.3s ease; 
-    opacity: 0; 
-    transform: translateY(350px); 
+    background-color: #8aa5bc; /* Light gray background color */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(350px); /* Start offscreen */
 }
 .about.active {
-    opacity: 1; 
-    transform: translateY(0); 
+    opacity: 1; /* Fade in on scroll */
+    transform: translateY(0); /* Slide up on scroll */
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .about .content {
@@ -324,10 +325,11 @@ footer p {
     text-align: left;
     margin: 0 auto;
 }
-
+/* Contact section */
 .contact {
     padding: 40px;
     text-align: center;
+ /* Light blue background color */
 }
 .contact form {
     max-width: 500px;
@@ -343,37 +345,39 @@ footer p {
 }
 .contact form button {
     padding: 10px 20px;
-    background-color: #56738d; 
+    background-color: #56738d; /* Red background color */
     border: none;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
 }
 .contact form button:hover {
-    background-color: #42749f; 
+    background-color: #42749f; /* Darker red background color on hover */
 }
+/* Hero section styles */
 .hero-section {
     background-image: url('https://wallup.net/wp-content/uploads/2019/05/10/27118-nature-landscapes-fields-crops-farm-hay-bales-wheat-rustic-trees-forest-sky-clouds-sunset-sunrise-color.jpg');
     background-size: cover;
     background-position: center;
-    height: 80vh; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
+    height: 80vh; /* Full viewport height */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
     text-align: center;
     color: #fff;
     font-size: 2rem;
-    padding:20px; 
+    padding:20px; /* Add padding for better spacing */
 }
 .hero-section h1 {
     margin-top:10vw;
     font-family: 'Playwrite CU', cursive;
     margin-bottom: 1rem;
-    font-size: 3rem; 
+    font-size: 3rem; /* Larger font size for heading */
+    opacity:1;
 }
 .hero-section p {
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Adjust font size for paragraph */
     opacity:1;
 }
 .hero-section .cta-button {
@@ -385,7 +389,7 @@ footer p {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 1.5rem;
+    margin-top: 1.5rem; /* Add margin to separate button */
     opacity:1;
 }
 .hero-section .cta-button:hover {
@@ -454,7 +458,7 @@ body.vendor {
     font-weight: bold;
     color: #ff0000;
 }
-
+/* Animation for the "25% off" text */
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -465,7 +469,7 @@ body.vendor {
         opacity: 1;
     }
 }
-
+/* Animation for the "HURRY UP!" text */
 @keyframes bounceIn {
     from {
         transform: scale(0);
@@ -480,7 +484,7 @@ body.vendor {
         opacity: 1;
     }
 }
-
+/* Apply the animations to the elements */
 .offer-section h4 {
     animation: slideIn 1s ease-out;
 }
