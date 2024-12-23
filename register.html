@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="vendorApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Vendor-Register</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        div {
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333; /* Darker text color */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555; /* Medium text color for labels */
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width:80%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            margin-left:25px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 10px;
+            border: none; /* Remove default border */
+            border-radius: 4px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            width: 100%; /* Full width button */
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="RegisterController">
+        <h2>Register</h2>
+        <form ng-submit="register()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" ng-model="newUser.name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" ng-model="newUser.password" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" ng-model="newUser.email" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

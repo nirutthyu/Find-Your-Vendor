@@ -23,7 +23,7 @@ app.controller('VendorController', ['$scope', '$timeout', 'CartService', functio
     $scope.search = '';
     $scope.cart = CartService.getCart();
     $scope.sort = 'name';
-
+    
     $scope.addToCart = function(item) {
         CartService.addToCart(item);
     };
@@ -78,23 +78,31 @@ app.service('CartService', function() {
 
     this.addToCart = function(item) {
         cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log(cart)
     };
 
     this.getCart = function() {
+        cart = JSON.parse(localStorage.getItem('cart')) || []
+        console.log(cart)
         return cart;
+        
     };
-
+    this.clearCart = function() {
+        cart = [];
+        localStorage.removeItem('cart'); // Clear from local storage
+    };
     this.totalBill = function() {
         return cart.reduce(function(total, item) {
             return total + item.price;
         }, 0);
     };
 });
-app.controller('ContactController', ['$scope', function($scope) {
+app.controller('ContactController', ['$scope', function($scope,CartService) {
     console.log("contact controller")
     // Expose $scope to the global window object for debugging
     window.debugScope = $scope;
-
+    $scope.cart=CartService.getCart();
     $scope.contact = {
         name: '',
         email: '',
@@ -108,5 +116,74 @@ app.controller('ContactController', ['$scope', function($scope) {
         console.log('Email:', $scope.contact.email);
         console.log('Subject:', $scope.contact.subject);
         console.log('Message:', $scope.contact.message);
+    };
+}]);
+app.controller('RegisterController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+    $scope.newUser = {
+        name: '',
+        password: '',
+        email: ''
+    };
+
+    $scope.register = function() {
+        // Make sure the correct endpoint and method is used
+        $http.post('http://localhost:5050/api/register', $scope.newUser) // Ensure you use the full URL
+        .then(function(response) {
+            alert('Registration successful! Please log in.');
+            $window.location.href = 'login.html'; // Redirect to login page after registration
+        })
+        .catch(function(error) {
+            alert('Registration failed. Please try again. Error: ' + error.data.error);
+        });
+    };
+}]);
+
+app.controller('LoginController', ['$scope', '$http', '$window', function($scope, $http, $window) {
+    $scope.user = {
+        email: '',
+        password: ''
+    };
+
+    $scope.login = function() {
+        $http.post('http://localhost:5050/api/login', $scope.user)
+        .then(function(response) {
+            // Redirect to home page after successful login
+            $window.location.href = 'home.html';
+        })
+        .catch(function(error) {
+            alert('Login failed. Please try again. Error: ' + error.data.error);
+        });
+    };
+}]);
+app.controller('PaymentController', ['$scope', '$http', '$window', 'CartService', function($scope, $http, $window, CartService) {
+    $scope.cart = CartService.getCart();
+    $scope.customer = {
+        name: '',
+        address: ''
+    };
+
+    $scope.totalBill = function() {
+        return CartService.totalBill();
+    };
+
+    $scope.confirmPayment = function() {
+        let orderDetails = {
+            customerName: $scope.customer.name,
+            customerAddress: $scope.customer.address,
+            items: $scope.cart,
+            totalAmount: $scope.totalBill(),
+            orderDate: new Date().toISOString(),
+            orderId: Math.floor(Math.random() * 100000) // Unique order ID
+        };
+        CartService.clearCart();
+        // Send order details to backend (assuming the backend is at '/api/confirm-payment')
+        $http.post('http://localhost:5050/api/confirm-payment', orderDetails)
+        .then(function(response) {
+            alert('Payment successful! Your order ID is ' + orderDetails.orderId);
+            $window.location.href = 'home.html'; // Redirect to home after payment
+        })
+        .catch(function(error) {
+            alert('Payment failed. Please try again.');
+        });
     };
 }]);
